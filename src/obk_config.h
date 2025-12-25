@@ -235,45 +235,21 @@
 #define ENABLE_DRIVER_NEO6M					1
 
 #elif PLATFORM_BEKEN
+#define ENABLE_HA_DISCOVERY       1
+#define ENABLE_SEND_POSTANDGET    1   // commandes httpget/httppost
+#define ENABLE_TEST_COMMANDS      1   // commandes help, echo, etc.
+#define ENABLE_DRIVER_BATTERY     1   // gestion tension batterie
+#define ENABLE_DRIVER_ADCSMOOTHER 1   // lissage ADC
+#define ENABLE_DRIVER_DOORSENSOR  1   // capteur ouverture
+#define ENABLE_DRIVER_HTTPBUTTONS 1   // boutons HTTP
+#define ENABLE_DRIVER_LED         1   // LED de statut
+#define ENABLE_MQTT               1
+#define ENABLE_LITTLEFS           1
+#define ENABLE_NTP                1
+#define ENABLE_EXPAND_CONSTANT    1
+#define ENABLE_OBK_SCRIPTING      1
+#define ENABLE_ADVANCED_CHANNELTYPES_DISCOVERY 1
 
-//#define ENABLE_LFS_SPI						1
-//#define ENABLE_DRIVER_TESTSPIFLASH			1
-
-//#define	ENABLE_DRIVER_UART_TCP					1
-
-// #define	ENABLE_DRIVER_PIR					1
-//#define ENABLE_DRIVER_BKPARTITIONS				1
-#define ENABLE_HA_DISCOVERY						1
-#define ENABLE_SEND_POSTANDGET					1
-#define ENABLE_MQTT								1
-#define ENABLE_TASMOTADEVICEGROUPS				1
-#define ENABLE_LITTLEFS							1
-#define ENABLE_NTP								1
-// #define ENABLE_TIME_DST						1
-#define ENABLE_TIME_SUNRISE_SUNSET				1
-#define ENABLE_DRIVER_LED						1
-#define ENABLE_DRIVER_BL0937					1
-#define ENABLE_DRIVER_BL0942					1
-#define ENABLE_DRIVER_BL0942SPI					1
-#define ENABLE_DRIVER_CSE7766					1
-// #define ENABLE_DRIVER_BMP280					1
-// #define ENABLE_DRIVER_PT6523					1
-// #define ENABLE_DRIVER_MAX6675				1
-// #define ENABLE_DRIVER_TEXTSCROLLER			1
-#define ENABLE_DRIVER_TUYAMCU					1
-// #define ENABLE_DRIVER_HT16K33				1
-// #define ENABLE_DRIVER_MAX72XX				1
-// #define ENABLE_DRIVER_ADCBUTTON				1
-#define ENABLE_I2C								1
-// #define ENABLE_TEST_COMMANDS					1
-#define ENABLE_CALENDAR_EVENTS					1
-#define ENABLE_DRIVER_BRIDGE					1
-#define ENABLE_DRIVER_HTTPBUTTONS				1
-#define ENABLE_ADVANCED_CHANNELTYPES_DISCOVERY	1
-#define ENABLE_DRIVER_WEMO						1
-#define ENABLE_DRIVER_HUE						1
-// #define ENABLE_DRIVER_CHARGINGLIMIT			1
-#define ENABLE_DRIVER_BATTERY					1
 #if PLATFORM_BK7231N || PLATFORM_BEKEN_NEW
 // #define ENABLE_DRIVER_PWM_GROUP				1
 #define ENABLE_DRIVER_SM16703P					1
