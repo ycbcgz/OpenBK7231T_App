@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - '**'
-  workflow_dispatch:   # bouton Run workflow dans l’onglet Actions
+  workflow_dispatch:
 
 jobs:
   build-bk7231n:
@@ -16,13 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - variant: default
-          - variant: berry
-          - variant: tuyaMCU
-          - variant: powerMetering
-          - variant: irRemoteESP
-          - variant: sensors
-          - variant: hlw8112
+          - variant: default   # ⚠️ compile uniquement la variante "default" pour tester ENABLE_SEND_POSTANDGET
 
     steps:
       - name: Checkout source
@@ -46,9 +40,15 @@ jobs:
                VARIANT="${{ matrix.variant }}" \
                OpenBK7231N
 
+      - name: Show enabled macros
+        run: |
+          grep ENABLE_SEND_POSTANDGET obk_config.h || true
+          grep ENABLE_TEST_COMMANDS obk_config.h || true
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: BK7231N_${{ matrix.variant }}
           path: output/
+
 
